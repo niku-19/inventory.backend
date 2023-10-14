@@ -2,6 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import "./database/init.js";
 import cors from "cors";
+import ItemRouter from "./routes/item.routes.js";
+import SaleRouter from "./routes/sales.routes.js";
+
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -11,6 +14,9 @@ app.use(
     origin: "*",
   })
 );
+
+app.use("/v1/api", ItemRouter);
+app.use("/v1/api", SaleRouter);
 
 app.use("*", (req, res) => {
   return res.status(404).json({
