@@ -1,9 +1,9 @@
 import { ErrorMassges, SuccessMassages } from "../const/message.js";
 import asyncHandler from "../handlers/catchAsync.js";
-import ErrorResponse from "../handler/error.js";
-import itemModel from "../model/item-model.js";
+import ErrorResponse from "../handlers/error.js";
+import itemModel from "../models/item.models.js";
 import mongoose from "mongoose";
-import saleModel from "../model/sale-model.js";
+import saleModel from "../models/sales.models.js";
 
 //@desc Add new item in the list
 //Route POST /v1/api/items/add-item
